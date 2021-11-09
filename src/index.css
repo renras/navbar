@@ -1,13 +1,128 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --peach-puff: #fdf4e8;
+  --peach-puff-medium: #885e01;
+  --peach-puff-dark: #513701;
+  --peach-puff-darker: #3c2901;
+  --pale-spring-bud: #d4d2a5;
+  --middle-grey: #928779;
+  --independence: #5e5768;
+  --dark-independence: #3a445d;
+  --light-black-text: #3d3d3d;
+  --peach-puff-text: #fec548;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--peach-puff);
+  color: var(--light-black-text);
+  letter-spacing: 2px;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--pale-spring-bud);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  font-size: 27px;
+  text-shadow: 1px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+span,
+.icons {
+  color: var(--peach-puff-dark);
+}
+
+button {
+  display: none;
+  color: var(--peach-puff-dark);
+}
+
+.pages {
+  text-transform: capitalize;
+}
+
+li:hover {
+  color: var(--peach-puff-medium);
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  font-size: 15px;
+  gap: 20px;
+}
+
+@media (min-width: 770px) {
+  nav {
+    height: auto !important;
+  }
+}
+
+@media (max-width: 769px) {
+  .navForIcons {
+    display: none;
+  }
+
+  header {
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+  }
+
+  .heading {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    justify-content: space-between;
+  }
+
+  button {
+    display: block;
+    border: none;
+    background: none;
+    font-size: 25px;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  nav {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  li {
+    padding: 10px 20px;
+    transition-property: background-color, color, padding-left;
+    transition-duration: 0.5s;
+  }
+
+  li:hover {
+    background-color: var(--peach-puff-dark);
+    color: var(--peach-puff-text);
+    padding-left: 30px;
+    cursor: pointer;
+  }
 }
